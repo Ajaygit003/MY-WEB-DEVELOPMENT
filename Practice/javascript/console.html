@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Console</title>
+</head>
+<body>
+    2. Write a program to accept two numbers and mathematical operators and perform operations accordingly.
+Like:
+Enter First Number: 7
+Enter Second Number: 9
+Enter operator : +
+Your Answer is: 16
+
+<br><br><input type="text" name="" id="first_num" placeholder="Enter First Number">
+<input type="text" name="" id="second_num" placeholder="Enter Second Number">
+<input type="text" name="" id="operator" placeholder="Enter Operator">
+<input type="text" name="" id="result" placeholder="Your Answer is" disabled>
+<button onclick="maths_operations()">Check Result</button>
+
+<script>
+    function maths_operations(){
+        var first_number=Number(document.getElementById("first_num").value);
+        var second_number=Number(document.getElementById("second_num").value);
+        var operator_sign=document.getElementById("operator").value;
+       
+        if(operator_sign=="+"){
+            var add=first_number+second_number;
+            document.getElementById("result").value=add;
+        }else if(operator_sign=="-"){
+            var subtract=first_number-second_number;
+            document.getElementById("result").value=subtract;
+        }else if(operator_sign=="/"){
+            var divide=first_number/second_number;
+            document.getElementById("result").value=divide;
+        }else if(operator_sign=="*"){
+            var multiply=first_number*second_number;
+            document.getElementById("result").value=multiply;
+        }else if(operator_sign=="**"){
+            var square=first_number**second_number;
+            document.getElementById("result").value=square;
+        }else if(operator_sign=="%"){
+            var percentage=(first_number/second_number)*100;
+            document.getElementById("result").value=percentage;
+        }
+        // else if(operator_sign=="r%"){
+        //     var modulus=first_number%second_number;
+        //     document.getElementById("result").value=modulus;
+        // }
+        else{}
+    }
+</script>
+</body>
+</html>

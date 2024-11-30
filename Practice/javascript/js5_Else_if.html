@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript Conditional Statement</title>
+</head>
+<body>
+    <!-- 1. If Condition -->
+    
+    <p id="result"></p>
+    <button onclick="check_age()">Check Age</button>
+
+    <!-- 2. If Else Condition -->
+    <p id="marks"></p>
+    <input type="text" id="percentage" placeholder="Enter Percent">
+    <input type="text" id="show">
+    <button onclick="marks()">Check Marks</button>
+    <script>
+
+        //1. If Condition
+        function check_age(){
+            var age=Number(prompt("Enter Age"))
+            if(age>=18){
+                document.getElementById("result").innerHTML="Eligible For Voting"
+            }
+            if(age<18){
+                document.getElementById("result").innerHTML="Not Eligible For Voting"
+            }
+        }
+
+        //2.If Else Condition
+        function marks(){
+            //Value in Popup prompt
+            //var marks=Number(prompt("Enter Marks")) 
+            //if value shown in input
+            var marks=Number(document.getElementById("percentage").value)  //Get value
+            if(marks>=70){
+                document.getElementById("marks").innerHTML="Pass With Merit"
+                document.getElementById("show").value="Pass With Merit"
+            }
+            else{
+                document.getElementById("marks").innerHTML="Pass"
+                document.getElementById("show").value="Pass"
+            }
+        }
+
+    </script>
+<br>
+<br>
+    <!--  Example:- -->
+     <input type="text" id="attandance_lect" placeholder="Attancdance Lecture" name="" value=""><br>
+     <input type="text" id="total_lect" placeholder="Total Lecture" name="" value=""><br>
+     <button onclick="collage_att()">Collage Attandance</button>
+     <input type="text" id="exam" placeholder="Exam Entry">
+     
+    <script>
+        function collage_att(){
+        var att_lect=Number(document.getElementById("attandance_lect").value);
+        var total_lect=Number(document.getElementById("total_lect").value);
+        var percent=(att_lect/total_lect)*100
+        if(percent>=70){
+            document.getElementById("exam").value="Allow In Exam"
+        }
+        else{
+            document.getElementById("exam").value="Not Allow In Exam"
+        }
+    }
+    </script>
+</body>
+</html>

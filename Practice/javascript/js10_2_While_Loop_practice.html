@@ -1,0 +1,62 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>JS10 While Loop Practice</title>
+    </head>
+    <body>
+
+        <button onclick="odd_num()">Odd Numbers</button>
+        <div id="odd_result"></div>
+
+        <br>
+        <input type="number" name="" id="table_num" placeholder="Enter a table which want to calculate">
+        <button onclick="table()">Table</button>
+        <div id="table_result"></div>
+        <br>
+
+        Find All Even Number and Calculate Summ of Even Number <br><br>
+        <input type="text" name="" id="start" placeholder="Start Range">
+        <input type="text" name="" id="end" placeholder="End Range">
+        <button onclick="even_num()">Even Numbers</button>
+        <div id="even_result"></div>
+        <div id="sum_even_result"></div>
+
+        <script>
+
+        function odd_num(){
+            var odd_no=1;
+            while(odd_no<=20){
+            if(odd_no % 2 !=0){
+                document.getElementById("odd_result").innerHTML+=(odd_no + "Odd <br>");
+            }
+            odd_no++;
+            }
+        }
+        
+        function table() {
+            var table_num=parseInt(document.getElementById("table_num").value);
+            var table_start=1;
+            while (table_start<=10){
+                document.getElementById("table_result").innerHTML+=("Table of " + table_num + "<br>" + table_num + "*" + table_start + "=" + table_num * table_start + "<br>");
+                table_start ++;
+            }
+        }
+    
+        function even_num(){
+            var start=Number(document.getElementById("start").value);
+            var end=Number(document.getElementById("end").value);
+            var add=0;
+            var even_number=start;
+            while(even_number<=end){
+                if(even_number%2==0){
+                    document.getElementById("even_result").innerHTML+=(even_number + "Even <br>");
+                }
+                even_number++;
+                var add=add+even_number;
+            }
+            document.getElementById("sum_even_result").innerHTML+=("Addintion Of All Even Number = " + add);
+        }
+    </script>
+    </body>
+</html>  

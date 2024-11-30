@@ -1,0 +1,32 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript 9 Loop </title>
+</head>
+<body>
+
+    <button onclick="table()">Table</button>
+    <p id="result"></p>
+
+    <script>
+        // for(var k=1;k<=10;k++){
+        //     document.write(k+"Increment<br>")
+        // }
+        // for(var i=10;i>=1;i--){
+        //     document.write(i+"Decrement<br>")
+        // }
+        // for(var j=2;j<=20;j+2){
+        //     document.write(j+"Increment by 2<br>")
+        // }
+
+        function table(){
+            var num=parseInt(prompt("Enter a number"));
+            for(var start=1;start<=10;start++){
+                //document.write(num*start+"<br>");
+                document.getElementById("result").innerHTML+=num*start+"<br>";
+            }
+        }
+    </script>
+</body>
+</html> 

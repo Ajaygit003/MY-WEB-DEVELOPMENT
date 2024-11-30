@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript3</title>
+</head>
+<body>
+    <script>
+        //squareroot s(s-a)(s-b)(s-c) Heros Formula
+
+        //s=(a+b+c)/2 Semi perimeter of triangle
+
+        var a=Number(prompt("Enter value of a"));
+        var b=Number(prompt("Enter value of b"));
+        var c=Number(prompt("Enter value of c"));
+        var s=(a+b+c)/2;
+        var area=(s*(s-a)*(s-b)*(s-c))**0.5;
+        document.write("<br>Formula " + area);
+    </script>
+</body>
+</html>

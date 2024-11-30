@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript6 Else If</title>
+</head>
+<body>
+    <input type="text" name="" id="marks" placeholder="Enter marks">
+    <button onclick="grading()">Grade</button>
+    <h1 id="result"></h1>
+
+    <script>
+        function grading(){
+            var marks=Number(document.getElementById("marks").value);
+            if(marks>=80){
+                document.getElementById("result").innerHTML="Grade A";
+            }else if(marks>=65){
+                document.getElementById("result").innerHTML="Grade B";
+            }else if(marks>=50){
+                document.getElementById("result").innerHTML="Grade C";
+            }else if(marks>=50){
+                document.getElementById("result").innerHTML="Grade D";
+            }else{
+                document.getElementById("result").innerHTML="Grade F";
+            }
+        }
+
+    </script>
+
+    <!-- Question -->
+
+    Accept Number of unit from user of electricity.then calculate the bill according to following condition:-
+
+    0- 100  2rs/unit
+    100-200 5/re/unit
+    200-300 7rs/unit
+    >300    10rs/unit
+    <br><br>
+    <input type="text" name="" id="enter_unit" placeholder="Enter Unit">
+    <input type="text" name="" id="price" placeholder="Price" disabled>
+    <button onclick="calculate_bill()">Calculate Bill</button>
+    <!-- <h1 id="bill_generated"></h1> -->
+    <script>
+        function calculate_bill(){
+            var unit=Number(document.getElementById("enter_unit").value);
+            if(unit<=100){
+                var price=unit*2
+                document.getElementById("price").value=price;
+            }else if(unit<=200){
+                var price=unit*5
+                document.getElementById("price").value=price;
+            }else if(unit<=300){
+                var price=unit*7
+                document.getElementById("price").value=price;
+            }else {
+                var price=unit*10
+                document.getElementById("price").value=price; 
+            }
+        }
+    </script>
+</body>
+</html>

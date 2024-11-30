@@ -1,0 +1,245 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript 6 Else if Condition Practice</title>
+</head>
+<body>
+
+1.  A company decided to give bonus to employee according to following criteria:
+<br>
+Time period of Service       Bonus
+<br>
+More than 10 years           10%
+<br>
+>=6 and <=10                 8%
+<br>
+Less than 6 years            5%
+<br>
+Ask user for their salary and years of service and print the net bonus amount.
+<br><br>
+
+<input type="" name="" id="salary" placeholder="Salary">
+<input type="" name="" id="service_years" placeholder="Service Years">
+<input type="" name="" id="total_salary" placeholder="Total Salary" disabled>
+<button onclick="calculate_salary()">Total Salary</button>
+<br><br>
+
+2. Write a program to accept two numbers and mathematical operators and perform operations accordingly.
+Like:
+Enter First Number: 7
+Enter Second Number: 9
+Enter operator : +
+Your Answer is: 16
+
+<br><br><input type="text" name="" id="first_num" placeholder="Enter First Number">
+<input type="text" name="" id="second_num" placeholder="Enter Second Number">
+<input type="text" name="" id="operator" placeholder="Enter Operator">
+<input type="text" name="" id="result" placeholder="Your Answer is" disabled>
+<button onclick="maths_operations()">Check Result</button>
+<br><br>
+
+3. Accept the number of days from the user and calculate the charge for library according to following:
+<br>
+Till five days:  Rs 2/day.
+<br>
+Six to ten days: Rs 3/day.
+<br>
+11 to 15 days :  Rs 4/day
+<br>
+After 15 days:   Rs 5/day
+
+<br><br><input type="" name="" id="num_days" placeholder="Number Of Days">
+<input type="" name="" id="library_bill" placeholder="Library Bill" disabled>
+<button onclick="library_charge()">Library Charge</button>
+<br><br>
+
+4. Accept the marks of English, Math and Science, Social Studies Subject and display the stream allotted according to following
+<br>
+All Subjects more than 80 marks - Science Stream
+<br>
+English > 80 and Math, Science above 50 - Commerce Stream
+<br>
+English > 80 and Social studies > 80 - Humanities
+<br><br>
+
+<input type="text" name="" id="english" placeholder="English Marks">
+<input type="text" name="" id="math" placeholder="Math Marks">
+<input type="text" name="" id="science" placeholder="Science Marks">
+<input type="text" name="" id="social" placeholder="Social Science Marks">
+<button onclick="check_stream()">Check Stream</button>
+<input type="text" name="" id="stream_alloted" placeholder="Stream Alloted" disabled>
+
+<br><br>
+5. Accept the kilometres covered and calculate the bill according to the following criteria:	
+<br>
+First 10 Km      Rs11/km
+<br>
+Next 90Km        Rs 10/km
+<br>
+After that       Rs9/km
+<br><br>
+
+<input type="" name="" id="distance" placeholder="Distance Covered">
+<input type="" name="" id="total_bill" placeholder="Total Bill" disabled>
+<button onclick="calculate_bill()">Calculate Bill</button>
+<br><br>
+
+6. Accept the age, sex ('M', 'F'), number of days and display the wages accordingly
+<br>
+ Age            Sex       Wage/day
+<br>
+>=18 and <30     M          700
+<br>
+                 F          750
+<br>
+>=30 and <=40    M          800
+<br>
+                 F          850
+<br>
+If age does not fall in any range then display the following message: "Enter appropriate age"
+<br>
+<br>
+
+<input type="" name="" id="age" placeholder="Age">
+<input type="" name="" id="gender" placeholder="Gender(M/F)">
+<input type="" name="" id="days" placeholder="Days">
+<button onclick="wages()">Calculate Wages</button>
+<input type="" name="" id="total_wage" placeholder="Total Wages">
+
+<script>
+    // 1.Solution
+    function calculate_salary(){
+        var salary=Number(document.getElementById("salary").value);
+        var service_years=parseFloat(document.getElementById("service_years").value);
+        if(service_years>10){
+            var bonus=(10/100)*salary;
+            document.getElementById("total_salary").value=salary+bonus;
+        } else if(service_years>=6){
+            var bonus=(8/100)*salary;
+            document.getElementById("total_salary").value=salary+bonus;
+        }else{
+            var bonus=(5/100)*salary;
+            document.getElementById("total_salary").value=salary+bonus;
+        }
+    }
+
+    // 2.Solution
+    function maths_operations(){
+        var first_number=Number(document.getElementById("first_num").value);
+        var second_number=Number(document.getElementById("second_num").value);
+        var operator_sign=document.getElementById("operator").value;
+       
+        if(operator_sign=="+"){
+            var add=first_number+second_number;
+            document.getElementById("result").value=add;
+        }else if(operator_sign=="-"){
+            var subtract=first_number-second_number;
+            document.getElementById("result").value=subtract;
+        }else if(operator_sign=="/"){
+            var divide=first_number/second_number;
+            document.getElementById("result").value=divide;
+        }else if(operator_sign=="*"){
+            var multiply=first_number*second_number;
+            document.getElementById("result").value=multiply;
+        }else if(operator_sign=="**"){
+            var square=first_number**second_number;
+            document.getElementById("result").value=square;
+        }else if(operator_sign=="%"){
+            var percentage=(first_number/second_number)*100;
+            document.getElementById("result").value=percentage;
+        }
+        else if(operator_sign=="r%"){
+            var modulus=first_number%second_number;
+            document.getElementById("result").value=modulus;
+        }
+        else{
+            document.getElementById("result").value="Please Put The Correct Operator"
+        }
+    }
+
+    // 3.Solution
+    function library_charge(){
+        var days=Number(document.getElementById("num_days").value);
+        if(days<=5){
+            var days_price=days*2;
+            document.getElementById("library_bill").value=days_price;
+        }else if(days<=10){
+            var days_price=days*3;
+            document.getElementById("library_bill").value=days_price;
+        }else if(days<=15){
+            var days_price=days*4;
+            document.getElementById("library_bill").value=days_price;
+        }else{
+            var days_price=days*5;
+            document.getElementById("library_bill").value=days_price;
+        }
+    }
+
+    // 4.Solution
+    function check_stream(){
+        var english_marks=parseFloat(document.getElementById("english").value);
+        var math_marks=parseFloat(document.getElementById("math").value);
+        var science_marks=parseFloat(document.getElementById("science").value);
+        var social_marks=parseFloat(document.getElementById("social").value);
+
+        if(english_marks>80 & math_marks>80 & science_marks>80 & social_marks>80){
+            document.getElementById("stream_alloted").value="Science Stream";
+        }else if(english_marks>80 & math_marks>50 & science_marks>50){
+            document.getElementById("stream_alloted").value="Commerce Stream";
+        }else if(english_marks>80 & social_marks>80){
+            document.getElementById("stream_alloted").value="Humanities Stream";
+        }else{
+            document.getElementById("stream_alloted").value="Stream Not Alloted";
+        }
+    }
+    
+    // 5.Solution
+    function calculate_bill(){
+        var distance_covered=Number(document.getElementById("distance").value);
+        if(distance_covered<=10){
+            var bill=distance_covered*11
+            document.getElementById("total_bill").value=bill;
+        }else if(distance_covered<=90){
+            var bill=distance_covered*10
+            document.getElementById("total_bill").value=bill;
+        }else {
+            var bill=distance_covered*9
+            document.getElementById("total_bill").value=bill;
+        }
+    }
+
+    // 6.Solution
+    function wages(){
+        var age=Number(document.getElementById("age").value);
+        var gender=document.getElementById("gender").value;
+        var days=Number(document.getElementById("days").value);
+        if(age>=18 & age<30){
+            if(gender=="M"){
+                var male_wage=700*days;
+                document.getElementById("total_wage").value=male_wage;
+            }
+            if(gender=="F"){
+                var female_wage=750*days;
+                document.getElementById("total_wage").value=female_wage;
+            }
+        }
+        else if(age>=30 & age<40){
+            if(gender=="M"){
+                var male_wage=800*days;
+                document.getElementById("total_wage").value=male_wage;
+            }
+            if(gender=="F"){
+                var female_wage=850*days;
+                document.getElementById("total_wage").value=female_wage;
+            }
+        }
+        else{
+            document.getElementById("total_wage").value="Enter appropriate age";
+        }
+    }
+</script>
+</body>
+</html>

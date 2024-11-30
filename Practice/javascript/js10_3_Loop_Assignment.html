@@ -1,0 +1,94 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loop Assignment</title>
+</head>
+<body>
+    1.Write a JavaScript program to calculate the factorial of a given number using a for loop. <br>
+    <!-- n! = n × (n - 1) × (n - 2) × (n - 3) × ... × 1  --><br>
+
+    <input type="text" name="" id="factorial_number" placeholder="Enter a Factorial number">
+    <button onclick="fact()">Calculate factorial</button><br><br>
+    <div id="factorial_result"></div><br>
+
+    2.Write a program to find those numbers which are divisible by 7 and multiples of 5, between 1500 and 2700 (both included). <br><br>
+    <button onclick="find_number()">Find Number</button><br><br>
+    <div id="find_numb"></div>
+
+    3.Write a Python program that iterates the integers from 1 to 50. For multiples of three print "Fizz" instead of the number and for multiples of five print "Buzz". For numbers that are multiples of three and five, print "FizzBuzz".
+    <br>Sample Output :
+    fizzbuzz <br>
+    1 <br>
+    2 <br>
+    fizz <br>
+    4 <br>
+    Buzz <br> <br>
+    <button onclick="calc_int()">Calculate integer</button><br>
+    <div id="int_result"></div><br>
+
+    4.Use a for loop to calculate the sum of numbers from 1 to 100 and print the result.<br><br>
+    <button onclick="sum()">Sum</button><br><br>
+    <div id="sum_result"></div><br>
+
+    5.calculate the sum of the digits of a given number using a for loop<br><br>
+    <input type="text" name="" id="given_no" placeholder="Enter a Number">
+    <button onclick="given_sum()">Sum Digit</button><br><br>
+    <div id="given_sum_result"></div><br>
+
+    <script>
+        function fact(){
+            var factorial_num=Number(document.getElementById("factorial_number").value);
+            var factorial=1;
+            for(var n=factorial_num;n>=1;n--){
+                factorial=factorial*n;
+            }
+            document.getElementById("factorial_result").innerHTML+=("Factorial Value = " + factorial);
+        }
+
+        function find_number(){
+            for(var i=1500;i<=2700;i++){
+                if(i%7==0 && i%5==0){
+                    document.getElementById("find_numb").innerHTML+=(i + "<br>");
+                }
+            }
+        }
+
+        function calc_int(){
+            for(var i=1;i<=50;i++){
+                if(i%3==0 && i%5==0){
+                    document.getElementById("int_result").innerHTML+=("FizzBuzz<br>");
+                }
+                else if(i%3==0){
+                    document.getElementById("int_result").innerHTML+=("Fizz<br>");
+                }
+                else if(i%5==0){
+                    document.getElementById("int_result").innerHTML+=("Buzz<br>");
+                }
+                else{
+                    document.getElementById("int_result").innerHTML+=(i + "<br>");
+                }
+            }
+        }
+        
+        function sum(){
+            var sum=0
+            for(var i=1;i<=100;i++){
+                sum=sum+i;
+            }document.getElementById("sum_result").innerHTML+=("Sum = "+ sum);
+        }
+
+        // Using Array Method:-
+        // function given_sum(){
+        //     var num=document.getElementById("given_no").value;
+        //     var add=0;
+        //     for (let i = 0; i < num.length; i++) {
+        //         add += parseInt(num[i]);
+        //     }
+        //     document.getElementById("given_sum_result").innerHTML+=("Sum Of All Digit = "+ add);
+        // }
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript 4 using Function</title>
+</head>
+<body>
+    <button onclick="area()">Area</button>
+    <p id="result"></p>
+    <script>
+        function area(){
+            var r=Number(prompt('Enter Radius'));
+            //document.write("Area = " (3.14*r*r)); It removes Html COde
+            var element=document.getElementById("result");
+            element.innerHTML="Area = <span>" + (3.14*r*r) + "</span>";
+         }
+    </script>
+</body>
+</html>

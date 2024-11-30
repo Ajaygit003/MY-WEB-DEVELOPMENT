@@ -1,0 +1,88 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript 8 Nested if</title>
+</head>
+<body>
+    <button onclick="iit()">Check Exam</button>
+    <br><br>
+    <input type="text" name="" id="age" placeholder="Enter Age">
+    <input type="text" name="" id="gender" placeholder="Enter Gender(M,F) Block Accept Only">
+    <input type="text" name="" id="days" placeholder="Enter Wages Days">
+    <input type="text" name="" id="total_wages" placeholder="Total Wages" disabled>
+    <button onclick="wages();">Total Wages</button>
+
+    <p id="result"></p>
+    <button onclick="quadratic()">Equation</button>
+    
+    <script>
+        function iit(){
+            var marks12=Number(prompt("Enter Marks Of 12th Class"));
+            if(marks12>70){
+                alert("You Are Eligible For JEE Mains");
+                var jeemains=Number(prompt("Enter Marks For JEE Mains"));
+                if(jeemains>55){
+                    alert("You Are Eligible For Advance");
+                }else{
+                    alert("Yor Are not Eligible For JEE Advance");
+                }
+            }else{
+                alert("Yor Are Nor Eligible For JEE Mains");
+            }
+        }
+    
+        function wages(){
+            var age=Number(document.getElementById("age").value);
+            var gender=document.getElementById("gender").value;
+            //var days=Number(document.getElementById("days").value);
+            if(age>=18 && age<30){
+                if(gender="M"){
+                    var days=Number(document.getElementById("days").value);
+                    var wage=days*700;
+                    document.getElementById("total_wages").value=wage;
+                }
+                if(gender="F"){
+                    var days=Number(document.getElementById("days").value);
+                    var wage=days*750;
+                    document.getElementById("total_wages").value=wage;
+                }
+            }else if(age>=18 && age<30){
+                if(gender="M"){
+                    var days=Number(document.getElementById("days").value);
+                    var wage=days*700;
+                    document.getElementById("total_wages").value=wage;
+                }
+                if(gender="F"){
+                    var days=Number(document.getElementById("days").value);
+                    var wage=days*750;
+                    document.getElementById("total_wages").value=wage;
+                }
+            }else{
+                document.getElementById("total_wages").value="Enter Apporiate Age";
+            }
+
+        }
+    
+        function quadratic(){
+            var a=Number(prompt("Enter value Of a"));
+            var b=Number(prompt("Enter value Of b"));
+            var c=Number(prompt("Enter value Of c"));
+            var d=b**2-(4*a*c);
+            if(d>0){
+                var d1=-b+((d)**0.5)/2*a;
+                var d2=-b-((d)**0.5)/2*a;
+                document.getElementById("result").innerHTML="Two Solution are Possible <br> d1 = "+d1 +"<br>d2 = "+ d2;
+            }else if(d<0){
+                document.getElementById("result").innerHTML="No Solution Is Possible";
+            } else {
+                var d1=-b+((d)**0.5)/2*a;
+                document.getElementById("result").innerHTML="One Solution Is Possible d1="+d1;
+            }
+        }
+    </script>
+
+
+    
+</body>
+</html>

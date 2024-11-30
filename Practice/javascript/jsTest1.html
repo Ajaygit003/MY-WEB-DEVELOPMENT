@@ -1,0 +1,89 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript Test</title>
+</head>
+<body>
+    1. FLow Chart is <br><br>
+    2.var keywords <br><br>
+    3.syntex by id:- <br><br>document.getElementById("ID");<br><br>
+    4.
+    <input type="number" name="" id="side_a" placeholder="Enter side a">
+    <input type="number" name="" id="side_b" placeholder="Enter side b">
+    <input type="number" name="" id="side_c" placeholder="Enter side c">
+    <button onclick="check_triangle()">Check Triangle</button>
+    <input type="text" name="" id="tri_result" placeholder="Traingle or not" disabled>
+    <br><br>
+    5.
+    <input type="number" name="" id="num1" placeholder="Enter number 1">
+    <input type="number" name="" id="num2" placeholder="Enter number 2">
+    <input type="number" name="" id="num3" placeholder="Enter number 3">
+    <button onclick="arrange_decending()">Arrange In_Decending</button>
+    <input type="text" name="" id="decending" placeholder="Decending Result" disabled>
+    <br><br>
+    6.
+    <input type="number" name="" id="year" placeholder="Enter year">
+    <button onclick="leap_year()">check_year</button>
+    <input type="text" name="" id="leap_result" placeholder="Year Result" disabled>
+    <br><br>
+
+    <!-- var dig_value=document.getElementById("dig_value").value=Math.trunc(last_val); -->
+    <input type="number" name="" id="enter_nbr" placeholder="Enter Number">
+    <button onclick="last_no()">Click For Last Number</button>
+    <input type="number" name="" id="dig_value" placeholder="Output value" disabled>
+    <input type="number" name="" id="value_num" placeholder="Last Number" disabled>
+    
+    
+
+    <script>
+        function check_triangle(){
+            var a=Number(document.getElementById("side_a").value);
+            var b=Number(document.getElementById("side_b").value);
+            var c=Number(document.getElementById("side_c").value);
+            if((a+b)>c && (b+c)>a && (c+a)>b) {
+                document.getElementById("tri_result").value="This is a triangle";
+            }else{
+                document.getElementById("tri_result").value="This is not a triangle";
+            }
+        }
+
+        function arrange_decending(){
+            var num1=Number(document.getElementById("num1").value);
+            var num2=Number(document.getElementById("num2").value);
+            var num3=Number(document.getElementById("num3").value);
+            if(num1>num2 && num2>num3) {
+                document.getElementById("decending").value=num1 + " > " + num2 + " > " + num3;
+            }else if(num2>num1 && num1>num3){
+                document.getElementById("decending").value=num2 + " > " + num1 + " > " + num3;
+            }else if(num3>num2 && num2>num1){
+                document.getElementById("decending").value=num3 + " > " + num2 + " > " + num1;
+            }else if(num1>num3 && num3>num2){
+                document.getElementById("decending").value=num1 + " > " + num3 + " > " + num2;
+            } else if(num2>num3 && num3>num1){
+                document.getElementById("decending").value=num2 + " > " + num3 + " > " + num1;
+            }else if(num3>num1 && num1>num2){
+                document.getElementById("decending").value=num3 + " > " + num1 + " > " + num2;
+            }
+        }
+    
+        function leap_year(){
+            var year=Number(document.getElementById("year").value);
+            if((year%4==0)&&(year%100!=0)||(year%400==0)){
+                document.getElementById("leap_result").value="Leap year"
+            }else{
+                document.getElementById("leap_result").value="Not a Leap year"
+            }
+        }
+    
+        function last_no(){
+            var enter_nbr=Number(document.getElementById("enter_nbr").value);
+            var last_val=enter_nbr%1000/100;
+            var dig_value=parseInt(document.getElementById("dig_value").value=last_val);
+            document.getElementById("value_num").value="Last Number is " + dig_value;
+        }
+    </script>
+
+    
+</body>
+</html>
