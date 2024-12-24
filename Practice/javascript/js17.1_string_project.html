@@ -1,0 +1,41 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String Mini project</title>
+</head>
+<body> 
+    1.program to print the words given by user from given string using split, slice, join method <br><br>
+    <input type="text" name="" id="number" placeholder="Enter A Word Count">
+    <button onclick="calculate_text()">Type Words</button>
+    <p id="result"></p>
+
+    <script>
+        // function calculate_text() {
+        //     var str = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque velit repellendus, aliquid nemo, perspiciatis magnam vitae dolores illo aspernatur obcaecati eveniet voluptates iure optio provident ad quae amet sapiente blanditiis id iusto, est quasi nam? Reprehenderit nobis nemo consequuntur. Natus aspernatur ex possimus voluptas consequuntur eaque cumque. Culpa odit nam explicabo officiis ut voluptas fugit architecto, nihil est nesciunt earum alias dolorum illo illum accusamus neque perspiciatis sunt. Eum accusamus, excepturi beatae vero facilis impedit ut sunt pariatur quidem suscipit cumque neque aperiam reiciendis odit dolor perspiciatis voluptatem reprehenderit nihil quod deleniti necessitatibus repudiandae. Ut, totam! Odio eius repellat consequatur.";
+        //     var n = document.getElementById("number").value;
+        //     var words = str.split(" ");
+        //     var result = "";
+        //     if(n<=100){
+        //         for(let i=0;i < n; i++){
+        //             result+=words[i]+" "
+        //         }
+        //     }
+        //     document.getElementById('result').innerHTML=result;  
+        // }
+
+        //using split, slice and join method
+        function calculate_text(){
+            var str = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque velit repellendus, aliquid nemo, perspiciatis magnam vitae dolores illo aspernatur obcaecati eveniet voluptates iure optio provident ad quae amet sapiente blanditiis id iusto, est quasi nam? Reprehenderit nobis nemo consequuntur. Natus aspernatur ex possimus voluptas consequuntur eaque cumque. Culpa odit nam explicabo officiis ut voluptas fugit architecto, nihil est nesciunt earum alias dolorum illo illum accusamus neque perspiciatis sunt. Eum accusamus, excepturi beatae vero facilis impedit ut sunt pariatur quidem suscipit cumque neque aperiam reiciendis odit dolor perspiciatis voluptatem reprehenderit nihil quod deleniti necessitatibus repudiandae. Ut, totam! Odio eius repellat consequatur.";
+            var n = document.getElementById("number").value;
+            if(n<=100){
+                var words = str.split(" ");
+                var result = words.slice(0,n).join(" ");
+                document.getElementById('result').innerHTML=result;
+            }
+        }
+
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,33 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Js 17 String</title>
+</head>
+<body>
+    <script>
+        //program to find vovel from string given by user create new string
+        let str = prompt("Enter a string");
+        let vovel = "aeiouAEIOU";
+        let newStr = "";
+        for (let i = 0; i < str.length; i++) {
+            if (vovel.includes(str[i])) {
+                newStr += str[i];
+            }
+        }
+        console.log(newStr);
+        // let str = prompt("Enter a string");
+        // let vovel = "aeiouAEIOU";
+        // let count = 0;
+        // for (let i = 0; i < str.length; i++) {
+        //     if (vovel.includes(str[i])) {
+        //       count++;
+        //     }
+        // }
+        // alert("Number of vovels in string is " + count);
+
+
+    </script>
+    
+</body>
+</html>

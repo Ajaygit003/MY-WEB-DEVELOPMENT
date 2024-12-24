@@ -1,0 +1,109 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String Assignment</title>
+</head>
+<body>
+    <script>    
+        //1.Write a Python program  to reverse a given string.
+            let str = "Hello World";
+            let reversedstr = str.split("").reverse().join("");
+            console.log(reversedstr);
+
+            //without using reverse() method
+            let str1 = "Hello World";
+            let reversedstr1 = "";
+            for (let i = str1.length - 1; i >= 0; i--){
+                reversedstr1 += str1[i];
+            }
+            console.log(reversedstr1);
+
+        //2.Write a program that counts the number of vowels and consonants in a string.
+
+            let str2 = "String Assignment For Practice";
+            let vowels = "aeiouAEIOU";
+            let vovel_count=0;
+            let str_split=str2.replace(/ /g,"").split("");
+            for (let i = 0; i < str_split.length; i++){
+                if (vowels.includes(str_split[i])) {
+                    vovel_count++;
+                }
+            }
+            console.log("Number of vowels: " + vovel_count);
+            console.log("Number Of Consonents: " + (str_split.length-vovel_count));
+
+        //3.Write a Python function to find the longest word in a string.
+            let str3 = "The quick brown fox jumped over a lazy dog";
+            let str3_split = str3.split(" ");
+            //console.log(str3_split);
+            let max_length = 0;
+            let longest_word = "";
+            for (let i = 0; i < str3_split.length; i++){
+                if (str3_split[i].length > max_length) {
+                    max_length = str3_split[i].length;
+                    longest_word = str3_split[i];
+                }
+            }
+            console.log("Longest word: " + longest_word);
+
+            //using sort()
+            let lngst_wrd = str3_split.sort(function(a, b) {
+                return b.length - a.length
+            });
+            console.log("Longest word: " + lngst_wrd[0]);
+
+        //4.Write a program to compress a string by replacing repeated characters with their count.
+            let str4 = "AAABBBCCCDD";
+            //let str4_split = str4.split("");
+            let digits = "";
+            let count = 1;
+            for (let i = 0; i < str4.length; i++) {
+                if (str4[i] === str4[i + 1]) {
+                    count++;
+                } 
+                else {
+                    digits += str4[i] + count;
+                    count = 1;
+                }
+            }
+            console.log("Digit string: " + digits);
+
+        //5.Write a program to find the first and last occurrence of the letter "o" and character "," in the string "Hello, World".
+            let str5 = "Hello, World";
+            let first_o = str5.indexOf("o");
+            let last_o = str5.lastIndexOf("o");
+            let first_comma = str5.indexOf(",");
+            console.log("First occurrence of 'o': " + first_o);
+            console.log("Last occurrence of 'o': " + last_o);
+            console.log("First occurrence of ',': " + first_comma);
+
+        //6.Write a program to find the last position of a substring "Emma" in the string "Emma is a data scientist who knows Python. Emma works at google".
+            let str6 = "Emma is a data scientist who knows Python. Emma works at google";
+            let split1=str6.split(" ")
+            let last_pos = split1.lastIndexOf("Emma");
+            console.log();
+            console.log("Last position of 'Emma': " + last_pos);
+
+        //7.Write a Python program to get a string from a given string where all occurrences of its first char have been changed to "@", except the first char itself.
+            //Input: “python programming performs major role in DA”
+            //Output: “python @rogramming @erforms major role in DA”
+            let str7 = "python programming performs major proper role in public DA";
+            let first_char = str7[0];
+            let str7_split = str7.split("");
+            for (let i = 1; i < str7_split.length; i++) {
+                if (str7_split[i] === first_char) {
+                    str7_split[i] = "@";
+                }
+            }
+            //console.log(first_char);
+            //console.log(str7_split);
+            console.log("New string: " + str7_split.join(""));
+            
+          
+            
+           
+
+    </script>
+</body>
+</html>

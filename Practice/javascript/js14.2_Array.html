@@ -1,0 +1,41 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS 14 Array</title>
+</head>
+<body>
+    <script>
+        let array=[7,9,"JS",90.5,"React JS"]
+        console.log(array.length);
+        // Add Element(Last Position)
+        array.push("Python")
+        console.log(array)
+
+        // Add Element(First Position)
+        array.unshift("HTML")
+        console.log(array)
+
+        //Delete Element(Last Position)
+        array.pop()
+        console.log(array);
+
+        //Delete Element(First Position)
+        array.shift()
+        console.log(array);
+
+        //Add Element in Mid
+        array.splice(2,0,"CSS")
+        console.log(array);
+
+        //Delete Element in Mid
+        array.splice(2,1)
+        console.log(array);
+
+        //Add/Delete in Mid
+        array.splice(2,1,"Javascript")
+        console.log(array);
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,94 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Armstrong</h2>
+    <input type="text" name="" id="num" placeholder="Enter a number">
+    <button onclick="armstrong()">armstrong</button>
+    <p id="result"></p>
+
+    <h2>Reverse</h2>
+    <input type="number" name="" id="reverse" placeholder="Enter a number">
+    <button onclick="reverse()">Reverse</button>
+    <input type="text" id="reverse_no" placeholder="Given Number Is Reverse" disabled>
+    <br><br>
+
+    <h2>Palindrome</h2>
+    <input type="text" name="" id="num2" placeholder="Enter a number">
+    <button onclick="palindrome()">Palindrome</button>
+    <p id="show_palindrome"></p>
+
+    <h2>Prime</h2>
+    <input type="text" name="" id="num1" placeholder="Enter a number">
+    <button onclick="prime()">Prime</button>
+    <p id="show"></p>
+
+    <script>
+        function armstrong(){
+            var num = Number(document.getElementById("num").value);
+            var sum=0;
+            var original=num;
+            while(num>0){
+                var rem=num%10;
+                sum=sum+(rem)**3;
+                num=parseInt(num/10);
+            }
+            if(original==sum){
+                document.getElementById("result").innerHTML="Armstrong Number";
+            }else{
+                document.getElementById("result").innerHTML="Not an Armstrong Number";
+            }
+        }
+
+        function reverse() {
+            var given_no=Number(document.getElementById('reverse').value);
+            var reverse_no=0;
+            while(given_no>0){
+                var digit=given_no%10;
+                reverse_no=reverse_no*10+digit;
+                given_no=parseInt(given_no/10);
+            }
+            document.getElementById('reverse_no').value=(reverse_no);
+        }
+
+        function palindrome(){
+            var num = Number(document.getElementById("num2").value);
+            var original=num;
+            var reverse_num=0;
+            while(num>0){
+                var rem=num%10;
+                reverse_num=reverse_num*10+rem;
+                num=parseInt(num/10);
+            }
+            if(original==reverse_num){
+                document.getElementById("show_palindrome").innerHTML="Palindrome";
+            }
+            else{
+                document.getElementById("show_palindrome").innerHTML="Not a Palindrome";
+            }
+        }
+
+        function prime(){
+            var num = Number(document.getElementById("num1").value);
+            var half=parseInt(num/2);
+            var indicator=false;
+            for(var k=2;k<=half;k++){
+                if(num%k==0){
+                    indicator=true
+                    break;
+                    document.getElementById("show").innerHTML=num + " Not a Prime Number";
+                }
+            }
+            if(indicator==true){
+                document.getElementById("show").innerHTML=num + " Not a Prime Number";
+            }
+            else {
+                document.getElementById("show").innerHTML=num + " is a Prime Number";
+            }
+        }
+    </script>
+</body>
+</html>

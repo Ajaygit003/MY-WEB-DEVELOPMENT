@@ -1,0 +1,139 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Js 15 Array Assignment</title>
+</head>
+<body>
+    
+    <script>
+        //1.Write a program that prints each element of the array numbers = [10, 20, 30, 40, 50] using a for loop.
+        let array_numbers = [10, 20, 30, 40, 50];
+        for (let i = 0; i < array_numbers.length; i++) {
+            console.log(array_numbers[i]);
+        }
+
+        //2.Write a program to calculate and print the sum of all elements in the array numbers = [5, 15, 25, 35, 45] using a loop.
+        let sum_numbers = [5, 15, 25, 35, 45];
+        let sum = 0;
+            for (let i = 0; i < sum_numbers.length; i++) {
+                sum += sum_numbers[i];
+            }
+            console.log("Sum = " + sum + "<br>");
+        
+        //3.Use a loop to find and print the largest number in the array numbers = [23, 89, 45, 67, 12, 90, 34].
+        let largest_numbers = [23, 89, 45, 67, 12, 90, 34]
+        let max = largest_numbers[0];
+        // for (let i = 0; i < largest_numbers.length; i++) {
+        //     if (largest_numbers[i] > max) {
+        //         max = largest_numbers[i];
+        //     }
+        // }
+        for(i of largest_numbers){
+            if(i > max){
+                max=i
+            }
+        }
+        console.log(max);
+
+        //3.1 find smallest number in array
+        let small_numbers = [23, 89, 45, 67, 12, 90, 34]
+        let min = small_numbers[0];
+        for(i of small_numbers){
+            if (i < min) {
+                min = i;
+            }
+        }
+        console.log(min);
+
+        //4.Write a program to check if the number 25 exists in the array numbers = [10, 20, 30, 40, 50]. If it exists, print "25 is found", otherwise print "25 is not found".
+        let exit_numbers = [10, 20, 30, 40, 50];
+        if (exit_numbers.includes(25)) {
+            console.log("25 is found");
+        }
+        else {
+            console.log("25 is not found");
+        }
+
+        //5.Write a program to multiply each element in the array numbers = [2, 4, 6, 8, 10] by 2 and store the result in a new array. Print the new array.
+        let mul_numbers = [2, 4, 6, 8, 10];
+        // let new_array = [];
+        // for (let i = 0; i < mul_numbers.length; i++) {
+        //     new_array.push(mul_numbers[i] * 2);
+        // }
+
+        // console.log(new_array);
+
+        //Using Map method
+        let new_array1 = mul_numbers.map(function (v,i,a) {
+            return v * 2;
+        });
+        console.log(new_array1);
+
+        //6.Write a program to count how many numbers in the array numbers = [5, 12, 18, 24, 7, 10, 15] are greater than 10. Print the count.
+        let count_numbers = [5, 12, 18, 24, 7,10, 15];
+        let count = 0;
+        for (let i = 0; i < count_numbers.length; i++) {
+            if (count_numbers[i] > 10) {
+                count++;
+            }
+        }
+        console.log(count);
+
+        //7.Using a loop, create a new array from numbers = [11, 22, 33, 44, 55] that contains only the odd numbers. Print the new array.
+        let odd_numbers = [11, 22, 33, 44, 55];
+        // let odd_array = [];
+        // for (let i = 0; i < odd_numbers.length; i++) {
+        //     if (odd_numbers[i] % 2 !== 0) {
+        //         odd_array.push(odd_numbers[i]);
+        //     }
+        // }
+        // console.log(odd_array);
+
+        //Using Filter Method
+        let odd_array1 = odd_numbers.filter(function (v,i,a) {
+            return(v %2 !==0)
+        })
+        console.log(odd_array1);
+
+        //8.Use a loop to create a new array that removes duplicates from numbers = [1, 2, 2, 3, 4, 4, 5, 6]. Print the new array.
+
+        let array= [1,2,2,3,4,4,5,6];
+        let new_array=[];
+            for(let k of array){
+                if(!new_array.includes(k)){
+                    new_array.push(k)
+                }
+            }
+        console.log(new_array);
+
+        //
+        let numbers = [1, 2, 2, 3, 4, 4, 5, 6];
+        let duplicate_array = [];
+        for (let i = 0; i < numbers.length; i++) {
+            if (duplicate_array.indexOf(numbers[i]) === -1) {
+                duplicate_array.push(numbers[i]);
+            }
+        }
+        console.log(duplicate_array);
+
+        let dul_numbers = [1, 2, 2, 3, 4, 4, 5, 6];
+        let remove_dupl = [];
+
+        // for (let i = 0; i < dul_numbers.length; i++) {
+        //     if (!remove_dupl.includes(dul_numbers[i])) {
+        //         remove_dupl.push(dul_numbers[i]);
+        //     }
+        // }
+        for (let num of dul_numbers) {
+        if (!remove_dupl.includes(num)) {
+            remove_dupl.push(num);
+        }
+    }
+
+        console.log(remove_dupl);
+        
+    </script>
+
+</body>
+</html>

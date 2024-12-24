@@ -1,0 +1,58 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS 14 Function Continue</title>
+</head>
+<body>
+    <button onclick="main()">Calculate</button>
+    <script>
+        function add(num1,num2){
+            return(num1+num2);
+        }
+        function sub(num1,num2){
+            return(num1-num2);
+        }
+        function mul(num1,num2){
+            return(num1*num2);
+        }
+        function div(num1,num2){
+            return(num1/num2);
+        }
+        function cont(){
+            let choice=Number(prompt("Enter 2 to Continue or 1 to Exit"));
+            if(choice==2){
+                main();
+            }
+            else{
+                alert('Thank You!');
+            }
+        }
+        function main(){
+            let a=Number(prompt("Enter Number1"));
+            let b=Number(prompt("Enter Number2"));
+            let op=prompt("Enter Operator(+,-,*,/)");
+            if(op=="+"){
+                let sol=add(a,b);
+                alert("Solution =" + sol);
+            }
+            else if(op=="-"){
+                let sol=sub(a,b)
+                alert("Solution =" + sol);
+            }
+            else if(op=="*"){
+                let sol=mul(a,b)
+                alert("Solution =" + sol);
+            }
+            else if(op=="/"){
+                let sol=div(a,b)
+                alert("Solution =" + sol);
+            }
+            else {
+                alert("Invalid Operator");
+            }
+            cont();
+        }
+    </script>
+</body>
+</html>

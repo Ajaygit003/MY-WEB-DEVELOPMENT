@@ -1,0 +1,66 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS 12 Nested Loop</title>
+</head>
+<body>
+
+    Prime Number b/w 1 to 100 <br><br>
+    <button onclick="prime()">Prime</button> <br><br>
+
+    1234 <br>
+    1234 <br>
+    1234 <br><br>
+
+    <button onclick="rows_cols()">RowsColumns</button> <br><br>
+
+    111 <br>
+    222 <br>
+    333 <br>
+    444 <br><br>
+
+    <button onclick="row_col()">RowsColumns</button> <br><br>
+
+    <script>
+        function prime(){
+            for(var num=1;num<=100;num++){
+                var indicator=false;
+                var half=parseInt(num/2);
+                    for(var k=2;k<=half;k++){
+                        if(num%k==0){
+                            indicator=true;
+                            break;
+                        }
+                    }
+                    if(indicator) {
+                        document.write(num+" Prime<br>")
+                    }
+                    else{
+                        document.write(num+" Not Prime<br>")
+                    }
+            }
+            
+        }
+
+        function rows_cols() {
+            for(var i=0;i<=3;i++) {
+                for(var j=1;j<=4;j++){
+                    document.write(j+" ")
+                }
+                document.write("<br>");
+            }
+        }
+
+        // function row_col(){
+        //     for(var r=1;r<=4;r++){
+        //         for(var c=1;c<=3;c++){
+        //             document.write(r+" ")
+        //         }
+        //         document.write("<br>")
+        //     }
+        // }
+    </script>
+    
+</body>
+</html>

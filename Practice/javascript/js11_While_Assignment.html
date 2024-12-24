@@ -1,0 +1,119 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>While Loop Assignment</title>
+</head>
+<body>
+    6.Write a program to check whether a given number is an Armstrong number using a while loop. Use the break statement to exit the 
+    loop if an intermediate condition is met (like detecting a zero in the number). <br>
+    Hint: An Armstrong number is a number that is equal to the sum of its digits raised to the power of the number of digits. <br><br>
+
+    <input type="number" name="" id="armstrong_no" placeholder="Enter 3 digit number">
+    <button onclick="check_armstrong()">Check Armstrong</button>
+    <input type="text" id="print_value" placeholder="Armstrong or Not Armstrong" disabled>
+    <br><br>
+
+    7.Write a program to reverse a given number using a while loop. <br><br>
+
+    <input type="number" name="" id="reverse" placeholder="Enter a number">
+    <button onclick="reverse()">Reverse</button>
+    <input type="text" id="reverse_no" placeholder="Given Number Is Reverse" disabled>
+    <br><br>
+
+    8.Write a program that prints numbers from 1 to 50 but skips numbers divisible by both 3 and 5 using a for loop and continue
+     statement.
+    <br><br>
+    <button onclick="continue_stmt()">Print Number</button><br><br>
+    <div id="div_result"></div><br>
+
+    10.Write a program to find out the given number is prime or not. <br><br>
+    <!-- <input type="number" name="" id="prime_no" placeholder="Enter a number"> -->
+    <button onclick="check_prime()">Check Prime</button>
+    <input type="text" id="prime_value" placeholder="Prime OR Not Prime" disabled>
+    <br><br>
+
+    <script>
+        function check_armstrong() {
+            var armstrong_no=Number(document.getElementById('armstrong_no').value);
+            var sum=0;
+            var temp=armstrong_no;
+            while(temp>0){
+                var digit=temp%10;
+                if(digit==0){
+                    break;
+                }else{
+                sum+=digit*digit*digit;
+                temp=parseInt(temp/10);
+                }  
+            }
+            if(sum==armstrong_no) {
+                document.getElementById('print_value').value=("Armstrong number");
+            }else{
+                document.getElementById('print_value').value=("Not Armstrong number");
+            }
+        }
+         
+        function reverse() {
+            var given_no=Number(document.getElementById('reverse').value);
+            var reverse_no=0;
+            while(given_no>0){
+                var digit=given_no%10;
+                reverse_no=reverse_no*10+digit;
+                given_no=parseInt(given_no/10);
+            }
+            document.getElementById('reverse_no').value=(reverse_no);
+        }
+
+        function continue_stmt(){
+            for(var i=1;i<=50;i++){
+                if(i%3==0 && i%5==0){
+                    continue;
+                } else{
+                    document.getElementById('div_result').innerHTML+=(i+"<br>");
+                }
+            }
+            
+        }
+
+        function prime(){
+            var pr_num=parseInt(prompt("Enter the number"));
+            if(pr_num<=1){
+                document.getElementById('prime_value').value=("Not a prime number");
+            }
+            if(pr_num==2){
+                document.getElementById('prime_value').value=("Prime number");
+            }  
+            if(pr_num%2==0) {
+                document.getElementById('prime_value').value=("Not a prime number");
+            } 
+            for(let i = 3; i <= pr_num/2; i+=2) {
+                console.log("i = " + i);
+                console.log("pr_num = " + pr_num);
+                if (pr_num % i === 0) {
+                    document.getElementById('prime_value').value=("Not a prime number");     
+                }
+            }
+            document.getElementById('prime_value').value=("Prime number");
+        }
+
+        // function check_prime() {
+        //     var pr_num=parseInt(prompt("Enter the number"));
+        //     var i;
+        //     isprime = true;
+        //     for(i = 2; i <= pr_num - 1; i++) {
+        //         if(pr_num % i == 0) {
+        //             flag = false;
+        //             break;
+        //         }
+        //     }
+        //     if(isprime==true){
+        //         console.log(pr_num + " is prime");
+        //     }
+        //     else {
+        //         console.log(pr_num + " is not prime");
+        //     }
+        // }
+    </script>
+</body>
+</html>
