@@ -69,6 +69,28 @@
             }
             console.log("Digit string: " + digits);
 
+            //diff method
+
+            let strc="aaaabbbccdde";
+            let unique=[];
+            for(let i=0;i<strc.length;i++){
+                if(!unique.includes(strc[i])){
+                    unique.push(strc[i]);
+                }
+            }
+            let alpha="";
+            for(let k of unique){
+                let count=0;
+                alpha+=k;
+                for(let j=0;j<strc.length;j++){
+                    if(strc[j]==k){
+                        count++
+                    }
+                }
+                alpha+=count;
+            }
+            document.write(alpha);
+
         //5.Write a program to find the first and last occurrence of the letter "o" and character "," in the string "Hello, World".
             let str5 = "Hello, World";
             let first_o = str5.indexOf("o");

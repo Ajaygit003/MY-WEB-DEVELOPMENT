@@ -1,0 +1,80 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(45deg, #1a1a2e, #16213e);
+    color: #fff;
+    font-family: 'Orbitron', sans-serif;
+  }
+  .clock_container {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 30px 30px 60px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    transition: all 0.3s ease;
+    color: #4eb8dd;
+    text-transform: uppercase;
+    position: relative;
+}
+div#clock {
+  display: flex;
+  gap: 15px;
+}
+div#clock > div {
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    padding: 15px;
+    width: 115px;
+    color: #00ff9f;
+    font-size: 3rem;
+    font-weight: bold;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.2s ease;
+}
+div#clock div#clocksec {
+  font-size: 18px;
+  align-self: flex-start;
+  padding: 10px;
+  width: 54px;
+}
+div#am {
+  position: absolute;
+  bottom: 60px;
+  right: 32px;
+  font-size: 15px;
+  font-weight: bold;
+  padding: 10px 13px;
+  border-radius: 10px;
+  background: rgba(0, 0, 0, 0.5);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+  color: #00ff9f;
+}
+div#days {
+  position: absolute;
+  left: 33px;
+  font-size: 17px;
+  font-weight: bold;
+  bottom: 20px;
+  color: #00ff9f;
+}
+div#date {
+  font-weight: bold;
+  position: absolute;
+  right: 30px;
+  font-size: 17px;
+  bottom: 20px;
+  color: #00ff9f;
+}
