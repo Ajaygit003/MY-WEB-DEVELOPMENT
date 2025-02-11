@@ -1,0 +1,30 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+    font-family: Arial, sans-serif;
+    /* background: linear-gradient(135deg, #6e7dff, #a0c4ff); */
+    background-color: #f4f4f4;
+}
+.counter {
+    font-size: 3rem;
+    margin: 20px;
+}
+button {
+    padding: 10px 20px;
+    margin: 5px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+}
+.increment { background-color: #4CAF50; color: white; }
+.decrement { background-color: #f44336; color: white; }
+.reset { background-color: #008CBA; color: white; }

@@ -1,0 +1,74 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Arial", sans-serif;
+  background-color: #f4f4f9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  flex-direction: column;
+}
+.tab-container {
+  display: flex;
+  justify-content: center;
+  background-color: #fff;
+  border-radius: 8px 8px 0 0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  overflow: hidden;
+}
+.tab {
+  padding: 15px 25px;
+  cursor: pointer;
+  background-color: #f1f1f1;
+  color: #555;
+  font-size: 16px;
+  font-weight: 600;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+.tab:hover {
+  background-color: #e0e0e0;
+  color: #333;
+}
+.active {
+  background-color: #3498db;
+  color: #fff;
+  border-bottom: 3px solid #3498db;
+}
+.tab-content {
+  display: none;
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 8px;
+  max-width: 800px;
+  width: 100%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 0.4s ease-in-out;
+}
+.tab-content.active-content {
+  display: block;
+}
+.tab-content h2 {
+  color: #3498db;
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+.tab-content p {
+  font-size: 16px;
+  color: #555;
+  line-height: 1.6;
+}
+/* FadeIn Animation */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
